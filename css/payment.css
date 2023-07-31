@@ -1,0 +1,55 @@
+.input-form{
+  max-width: 640px;
+    padding: 0 16px;
+    margin: auto;
+}
+
+#delivery-form,
+#payment-form {
+  border: none;
+
+}
+
+.form-legend {
+  font-size: 18px;
+  font-weight: 700;
+}
+.input-field {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.label-item {
+  width: 120px;
+  text-align: right;
+}
+.input-item {
+  flex: 1;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  padding: 8px 16px;
+  outline: none;
+  background-color: var(--input-color);
+}
+  /* rscss */
+.input-item.-size-s{ 
+  max-width: 88px;
+}
+.input-item.-size-m{ 
+  max-width: 200px;
+}
+#formSubmit-btn {
+  display: block;
+  margin: 8px auto;
+  border: 1px solid var(--primary-color);
+  border-radius: 50px;
+  padding: 8px 50px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+#formSubmit-btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
