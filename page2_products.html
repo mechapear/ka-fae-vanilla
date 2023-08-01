@@ -1,34 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products</title>
-  <link rel="stylesheet" href="/css/global.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/nav-bar.css" />
+    <link rel="stylesheet" href="/css/products-list.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,500;9..40,700;9..40,800&family=Roboto&display=swap"
       rel="stylesheet"
     />
-</head>
-<body>
-  <div id="logo-wrapper">
-    <a id="logo-link" href="/index.html">
-      <img id="logo" src="/images/logo.jpg" alt="logo" />
-    </a>
-  </div>
-  <nav id="header-menu">
-    <ul class="menu-list">
-      <li class="menu-item"><a class="menu-link" href="/index.html#our-story"">Our Story</a></li>
-      <li class="menu-item"><a class="menu-link" href="page2_products.html">Products</a></li>
-      <li class="menu-item"><a class="menu-link" href="page3_payment.html">Payment</a></li>
-    </ul>
-  </nav>
+  </head>
+  <body>
+    <div id="logo-wrapper">
+      <a id="logo-link" href="/index.html">
+        <img id="logo" src="/images/logo.jpg" alt="logo" />
+      </a>
+    </div>
+    <nav id="header-menu">
+      <ul class="menu-list">
+        <li class="menu-item">
+          <a class="menu-link" href="/index.html#our-story">Our Story</a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="page2_products.html">Products</a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="page3_payment.html">Payment</a>
+        </li>
+      </ul>
+    </nav>
 
+    <section id="products">
+      <img
+        class="product-item"
+        src="/images/coffee-signature.png"
+        alt="signature coffee"
+      />
+      <div>
+        <span class="product-name">Signature Blends</span>
+        <p class="product-price">$22</p>
+        <p>
+          Get ready for a delightful coffee adventure! Our special blend
+          combines the best of Latin American and top-notch Thai coffees,
+          resulting in a super creamy and wonderfully sweet cup.<br />
+          You'll fall in love with the charming mix of toffee, nutty, and
+          chocolaty flavors, making it an absolute favorite for all coffee lovers!
+        </p>
+        <p class="product-detail">
+          Flavour profile: Dark Chocolate / Toffee Nut / Syrupy <br />
+          Type: Full Body / Low Acidity <br />
+          Net weight: 250 g.
+        </p>
+      </div>
 
+      <div>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          value="1"
+          pattern="[0-9]*"
+        />
+        <button>Add to cart</button>
+      </div>
 
-  
-</body>
+      <img
+        class="product-item"
+        src="/images/coffee-ethiopia.png"
+        alt="ethiopia coffee"
+      />
+      <div>
+        <span class="product-name">Ethiopian Blends</span>
+        <p class="product-price">$22</p>
+        <p>
+          Step into a world of African coffee wonder! Our coffee beams with the
+          radiance of sun rays, blossoms with a delightful floral scent, and
+          dances with sweetness, accompanied by notes of berries and citrus flavors.
+          <br />
+          With every sip, you'll be greeted by a friendly and inviting blend
+          that celebrates the beauty of African coffees. Come on in and treat
+          yourself to this delightful experience!
+        </p>
+        <p class="product-detail">
+          Flavour profile: Red Floral / Strawberry / Blueberry <br />
+          Type: Medium Body / Medium Acidity <br />
+          Net weight: 250 g.
+        </p>
+      </div>
+
+      <div>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          value="1"
+          pattern="[0-9]*"
+        />
+        <button>Add to cart</button>
+      </div>
+
+      <img
+        class="product-item"
+        src="/images/coffee-colombia.png"
+        alt="colombia coffee"
+      />
+      <div>
+        <span class="product-name">Colombian Blends</span>
+        <p class="product-price">$22</p>
+        <p>
+          Don't hesitate to try this amazing Colombian coffee; it's absolutely
+          worth it! With its remarkable taste, clear aroma, and delightful
+          texture, it offers a floral fragrance and bursts of sweet and sour
+          berry-like goodness that dance on your taste buds.
+          <br />
+          Whether you enjoy it hot or cold, this coffee is an absolute delight
+          that's bound to win everyone's heart. Get ready for a coffee
+          experience that's simply irresistible!
+        </p>
+        <p class="product-detail">
+          Flavour profile: Red Floral / Berry / Mango / Winey<br />
+          Type: Medium Body / Medium Acidity <br />
+          Net weight: 250 g.
+        </p>
+      </div>
+
+      <div>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          value="1"
+          pattern="[0-9]*"
+        />
+        <button>Add to cart</button>
+      </div>
+
+      <img
+        class="product-item"
+        src="/images/coffee-kenya.png"
+        alt="kenya coffee"
+      />
+      <div>
+        <span class="product-name">Kenya Blends</span>
+        <p class="product-price">$22</p>
+        <p>
+          Welcome to the world of Kenyan coffee magic! We're thrilled to
+          introduce you to this delightful brew that's both complex and full of
+          quality. <br />
+          When it starts to drip, get ready for a burst of green grape aroma
+          that's simply irresistible. Take that first sip and you'll experience a
+          playful dance of sweet and sour notes, like enjoying the flavors of
+          green apples and grapes. And as you relish each sip, you'll be greeted
+          by a refreshing lemon tea flavor and a smooth, honey aftertaste that
+          lingers warmly in your mouth. It's a flavor experience that will leave
+          you wanting more!
+        </p>
+        <p class="product-detail">
+          Flavour profile: Lemon tea, Honey, Green apple, Green grape <br />
+          Type: Medium Body / Medium Acidity <br />
+          Net weight: 250 g.
+        </p>
+      </div>
+
+      <div>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          value="1"
+          pattern="[0-9]*"
+        />
+        <button>Add to cart</button>
+      </div>
+    </section>
+
+    <footer id="footer-wrapper">
+      <p class="footer-header">Subscribe here and don't miss a thing!</p>
+      <div id="subscribeInput">
+        <input
+          type="email"
+          id="user-email"
+          name="userEmail"
+          placeholder="email@example.com"
+        />
+        <button id="join-btn" type="submit">join</button>
+      </div>
+
+      <p>
+        Join to get special offers, free giveaways, and once-in-a-lifetime
+        deals.
+      </p>
+    </footer>
+  </body>
 </html>
