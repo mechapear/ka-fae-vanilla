@@ -3,7 +3,7 @@
   position: relative;
 }
 #banner-wrapper::before {
-  content: ""; 
+  content: '';
   /*  */
   position: absolute;
   inset: 0; /* make it strech to the size of #banner-wrapper (top,bottom,left,right 0) */
@@ -31,20 +31,21 @@
   transform: none;
   vertical-align: top;
 }
-#intro-section{
+#intro-section {
   display: block;
   text-align: center;
   padding: 3rem;
 }
-#intro-header{
+#intro-header,
+#story-header {
   font-size: 1.5rem;
 }
-#intro-body{
+#intro-body {
   padding: 1.5rem 1rem 0 1rem;
   max-width: 640px;
   margin: 0 auto;
 }
-#products-carousel{
+#products-carousel {
   display: flex;
   overflow-x: auto;
   -ms-overflow-style: none; /* Hide the scrollbar for MS Edge */
@@ -57,16 +58,40 @@
   display: none; /* Hide the scrollbar on Webkit based browsers (Chrome, Safari, etc) */
   -webkit-overflow-scrolling: touch; /* On touch screens the content continues to scroll for a while after finishing the scroll gesture */
 }
-.product-item{
+.product-item {
   weight: 280px;
   height: 280px;
-  margin: 16px;
+  margin: 1rem;
   border-radius: 0.5rem;
 }
-
-#story-video{
+#story-wrapper {
+  display: block;
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+  text-align: center;
+}
+#story-video {
   width: 560px;
   max-width: 100%;
   aspect-ratio: 560 / 315;
   vertical-align: top;
+}
+#story {
+  padding: 2rem 1.5rem;
+  margin: auto;
+}
+#story-body {
+  padding-top: 1.5rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  #story-wrapper{
+    display: flex;
+  }
+  #story-video {
+    width: 720px;
+  }
+
 }
