@@ -44,6 +44,26 @@
   max-width: 640px;
   margin: 0 auto;
 }
+#products-carousel{
+  display: flex;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* Hide the scrollbar for MS Edge */
+  scrollbar-width: none; /* Hide the scrollbar for Mozilla Firefox */
+  margin: 0 1.5rem 2rem 1.5rem;
+  width: 90vw;
+  height: fit-content;
+}
+#carousel::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar on Webkit based browsers (Chrome, Safari, etc) */
+  -webkit-overflow-scrolling: touch; /* On touch screens the content continues to scroll for a while after finishing the scroll gesture */
+}
+.product-item{
+  weight: 200px;
+  height: 200px;
+  margin: 16px;
+  border-radius: 0.5rem;
+}
+
 #story-video{
   width: 560px;
   max-width: 100%;
