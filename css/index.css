@@ -64,7 +64,7 @@
   margin: 1rem;
   border-radius: 0.5rem;
 }
-#story-wrapper {
+#our-story {
   display: block;
   background-color: var(--background-color);
   color: var(--secondary-color);
@@ -87,7 +87,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  #story-wrapper{
+  #our-story{
     display: flex;
   }
   #story-video {
