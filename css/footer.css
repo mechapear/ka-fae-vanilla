@@ -2,17 +2,19 @@
   background-color: var(--secondary-color);
   padding: 32px 16px;
   text-align: center;
-  line-height: 24px;
+  line-height: 2rem;
 }
 .footer-header{
   font-weight: 700;
+}
+#subscribeInput{
+  margin: 1rem;
 }
 #user-email{
   min-width: 250px;
   border: 1px solid var(--secondary-color);
   border-radius: 50px;
   padding: 12px 16px;
-  
 }
 #user-email:focus{
   outline: none;

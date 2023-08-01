@@ -8,10 +8,9 @@
   position: absolute;
   inset: 0; /* make it strech to the size of #banner-wrapper (top,bottom,left,right 0) */
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(2px); /* frosted glass effect  */
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: saturate(60%) blur(2px); /* frosted glass effect  */
 }
-
 #banner-text {
   position: absolute;
   z-index: 2;
@@ -19,7 +18,10 @@
   color: var(--secondary-color);
   text-align: center;
   top: 50%; /* 50% of parent */
-  transform: translateY(-50%); /* move up 50% of its own element */
+  transform: translateY(-50%); /* move up 50% of its own height */
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 #video-banner {
   width: 100%;
@@ -27,5 +29,23 @@
   min-width: 0;
   min-height: 0;
   transform: none;
+  vertical-align: top;
+}
+#intro-section{
+  display: block;
+  text-align: center;
+  padding: 2rem;
+}
+#intro-header{
+  font-size: 1.5rem;
+}
+
+#intro-body{
+  padding: 1.5rem 1rem 0 1rem;
+}
+#story-video{
+  width: 560px;
+  max-width: 100%;
+  aspect-ratio: 560 / 315;
   vertical-align: top;
 }
