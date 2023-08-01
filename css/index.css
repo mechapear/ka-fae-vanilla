@@ -49,7 +49,7 @@
   overflow-x: auto;
   -ms-overflow-style: none; /* Hide the scrollbar for MS Edge */
   scrollbar-width: none; /* Hide the scrollbar for Mozilla Firefox */
-  margin: 0 1.5rem 2rem 1.5rem;
+  margin: 0 auto 2rem auto;
   width: 90vw;
   height: fit-content;
 }
@@ -58,8 +58,8 @@
   -webkit-overflow-scrolling: touch; /* On touch screens the content continues to scroll for a while after finishing the scroll gesture */
 }
 .product-item{
-  weight: 200px;
-  height: 200px;
+  weight: 280px;
+  height: 280px;
   margin: 16px;
   border-radius: 0.5rem;
 }
