@@ -6,7 +6,10 @@
     <title>Payment</title>
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/nav-bar.css" />
+    <link rel="stylesheet" href="/css/banner.css">
+    <link rel="stylesheet" href="/css/cart.css" />
     <link rel="stylesheet" href="/css/payment.css" />
+    <link rel="stylesheet" href="/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,7 +25,9 @@
     </div>
     <nav id="header-menu">
       <ul class="menu-list">
-        <li class="menu-item"><a class="menu-link" href="/index.html#our-story">Our Story</a></li>
+        <li class="menu-item">
+          <a class="menu-link" href="/index.html#our-story">Our Story</a>
+        </li>
         <li class="menu-item">
           <a class="menu-link" href="page2_products.html">Products</a>
         </li>
@@ -31,14 +36,63 @@
         </li>
       </ul>
     </nav>
-    <form class="input-form" action="" method="post">
-      
-      <p>Shopping cart</p>
 
-      <fieldset id="delivery-form">
-        <legend class="form-legend">Delivery Address</legend>
+    <section id="banner-wrapper">
+      <h1 id="banner-text">Our Best Selection</h1>
+      <img id="image-banner" src="/images/product-banner.jpg" alt="" />
+    </section>
+
+    <div class="table-wrapper">
+      <p id="cart-header">Your cart</p>
+      <table id="order-summary">
+        <colgroup>
+          <col class="col-img">
+          <col class="col-name">
+          <col class="col-quantity">
+          <col class="col-total">
+        </colgroup>
+        <thead class="order-table-header">
+          <tr>
+            <th class="table-header" colspan="2">Product</th>
+            <th class="table-header">Quantity</th>
+            <th class="table-header">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-detail">
+              <img class="product-image" src="/images/product-bg.png" alt="" />
+            </td>
+            <td class="table-detail">
+              <span class="product-name">name</span>
+            </td>
+            <td class="table-detail">
+              <input
+                class="product-quality"
+                type="number"
+                id="quantitySig"
+                name="quantitySignature"
+                min="0"
+                value="1"
+                pattern="[0-9]*"
+                required
+              />
+            </td>
+            <td class="product-price table-detail">price</td>
+          </tr>
+          <tr>
+            <td class="table-detail" colspan="3">Subtotal</td>
+            <td class="table-detail">price</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <form class="input-form" action="" method="post">
+      <fieldset id="shipping-form">
+        <legend class="form-legend">Shipping Address</legend>
         <div class="input-field">
-          <label class="label-item" for="name-input">Name*</label>
+          <label class="label-item" for="name-input">Name</label>
           <input
             class="input-item"
             type="text"
@@ -48,44 +102,56 @@
           />
         </div>
         <div class="input-field">
-          <label class="label-item" for="address1-input">Address line 1*</label>
+          <label class="label-item" for="address1-input">Address</label>
           <input
             class="input-item"
             type="text"
             id="address-input"
-            name="address"
+            name="addressLine1"
             required
           />
         </div>
         <div class="input-field">
-          <label class="label-item" for="address2-input">Address line 2</label>
+          <label class="label-item" for="address2-input">Address</label>
           <input
             class="input-item"
             type="text"
             id="address-input"
-            name="address"
+            name="addressLine2"
+            placeholder="(optional)"
           />
         </div>
         <div class="input-field">
-          <label class="label-item" for="country-input">Country*</label>
+          <label class="label-item" for="country-input">Country</label>
           <input
             class="input-item -size-m"
             type="text"
             id="country-input"
             name="country"
+            value="Canada"
             required
           />
         </div>
         <div class="input-field">
           <label class="label-item" for="city-input">City</label>
-          <input class="input-item -size-m" type="text" id="city-input" name="city" />
+          <input
+            class="input-item -size-m"
+            type="text"
+            id="city-input"
+            name="city"
+          />
         </div>
         <div class="input-field">
           <label class="label-item" for="state-input">State</label>
-          <input class="input-item -size-m" type="text" id="state-input" name="state" />
+          <input
+            class="input-item -size-m"
+            type="text"
+            id="state-input"
+            name="state"
+          />
         </div>
         <div class="input-field">
-          <label class="label-item" for="postal-input">Postal Code*</label>
+          <label class="label-item" for="postal-input">Postal Code</label>
           <input
             class="input-item -size-s"
             type="text"
@@ -96,7 +162,7 @@
           />
         </div>
         <div class="input-field">
-          <label class="label-item" for="phone-input">Phone Number*</label>
+          <label class="label-item" for="phone-input">Phone</label>
           <input
             class="input-item -size-m"
             type="tel"
@@ -107,7 +173,7 @@
           />
         </div>
         <div class="input-field">
-          <label class="label-item" for="email-input">Email*</label>
+          <label class="label-item" for="email-input">Email</label>
           <input
             class="input-item"
             type="email"
@@ -120,7 +186,6 @@
 
       <fieldset id="payment-form">
         <legend class="form-legend">Payment Information</legend>
-
         <div class="input-field">
           <label class="label-item" for="cardName-input">Cardholder</label>
           <input
@@ -149,6 +214,7 @@
             type="text"
             id="expiration-input"
             name="expirationDate"
+            maxlength="5"
             placeholder="MM/YY"
             required
           />
@@ -169,5 +235,24 @@
 
       <button type="submit" id="formSubmit-btn">Check Out</button>
     </form>
+
+    <footer id="footer-wrapper">
+      <p class="footer-header">Subscribe here and don't miss a thing!</p>
+      <div id="subscribeInput">
+        <input
+          type="email"
+          id="user-email"
+          name="userEmail"
+          placeholder="email@example.com"
+          required
+        />
+        <button id="join-btn" type="submit">join</button>
+      </div>
+
+      <p>
+        Join to get special offers, free giveaways, and once-in-a-lifetime
+        deals.
+      </p>
+    </footer>
   </body>
 </html>
