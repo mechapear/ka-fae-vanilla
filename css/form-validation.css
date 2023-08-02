@@ -1,0 +1,8 @@
+.input-item:focus:invalid{
+  border: 1px solid var(--invalid-color);
+  background-color: var(--invalid-input-color);
+}
+.input-item:focus:valid:required{
+  border: 1px solid var(--valid-color);
+  background-color: var(--valid-input-color);
+}
