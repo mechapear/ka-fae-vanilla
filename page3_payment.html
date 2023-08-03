@@ -17,7 +17,6 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,500;9..40,700;9..40,800&family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <script src="/script/form.js"></script>
   </head>
   <body>
     <!-- header page section -->
@@ -175,7 +174,7 @@
             id="phone-input"
             name="phone"
             pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
-            required
+            placeholder="(optional)"
           />
         </div>
         <div class="input-field">
@@ -185,6 +184,7 @@
             type="email"
             id="email-input"
             name="email"
+            placeholder="email@example.com"
             required
           />
         </div>
@@ -272,4 +272,5 @@
   </body>
   <!-- solve: external javascript file cannot get html element -->
   <script src="/script/email-subscription.js"></script>
+  <script src="/script/form-validation.js"></script>
 </html>
