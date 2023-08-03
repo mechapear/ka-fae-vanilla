@@ -17,6 +17,7 @@
     />
   </head>
   <body>
+    <!-- header page section -->
     <div id="logo-wrapper">
       <a id="logo-link" href="/index.html">
         <img id="logo" src="/images/logo.jpg" alt="logo" />
@@ -36,6 +37,7 @@
       </ul>
     </nav>
 
+    <!-- page banner -->
     <section id="banner-wrapper">
       <h1 id="banner-text">Happy Coffee Day</h1>
       <video id="video-banner" autoplay muted loop>
@@ -43,6 +45,7 @@
       </video>
     </section>
 
+    <!-- intro message -->
     <section id="intro-section">
       <span id="intro-header">Start your day with our Specialty Coffee!</span>
       <p id="intro-body">
@@ -52,6 +55,7 @@
       </p>
     </section>
 
+    <!-- product carousel -->
     <section id="products-carousel">
       <a href="/page2_products.html#signature-coffee">
         <img
@@ -83,6 +87,7 @@
       </a>
     </section>
 
+    <!-- our company story -->
     <section id="our-story">
       <iframe
         id="story-video"
@@ -106,6 +111,7 @@
       </div>
     </section>
 
+    <!-- footer / subscription section -->
     <footer id="footer-wrapper">
       <p class="footer-header">Subscribe here and don't miss a thing!</p>
       <div id="subscribeInput">
@@ -116,13 +122,20 @@
           placeholder="email@example.com"
           required
         />
-        <button id="join-btn" type="submit">join</button>
+        <button id="join-btn" type="submit" onclick="subscribeComplete()">
+          join
+        </button>
       </div>
-
+      <!-- this message will display when user submit the email subscription -->
+      <div id="complete-msg-block">
+        <p id="complete-msg">Thank you for joining our community!</p>
+      </div>
       <p>
         Join to get special offers, free giveaways, and once-in-a-lifetime
         deals.
       </p>
     </footer>
   </body>
+  <!-- solve: external javascript file cannot get html element -->
+  <script src="/script/email-subscription.js"></script>
 </html>

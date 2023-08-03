@@ -4,10 +4,10 @@
   --button-hover: #f1f1f18a;
   --input-color: #fafafb;
   --background-color: #557a46;
-  --invalid-color: #EF9F9F;
-  --invalid-input-color: #FFF2F2;
-  --valid-color: #56B3AD;
-  --valid-input-color: #EEF6F2
+  --invalid-color: #ef9f9f;
+  --invalid-input-color: #fff2f2;
+  --valid-color: #56b3ad;
+  --valid-input-color: #eef6f2;
 }
 
 html {

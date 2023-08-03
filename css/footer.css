@@ -1,35 +1,45 @@
-#footer-wrapper{
+#footer-wrapper {
   background-color: var(--secondary-color);
   padding: 3.5rem 1rem;
   text-align: center;
   line-height: 2rem;
 }
-.footer-header{
+.footer-header {
   font-weight: 700;
 }
-#subscribeInput{
+#subscribeInput {
   margin: 1rem 0;
 }
-#join-btn, #user-email{
+#join-btn,
+#user-email,
+#complete-msg {
   border-radius: 50px;
 }
-#user-email{
+#user-email {
   min-width: 250px;
   border: 1px solid var(--secondary-color);
   padding: 0.5rem 1rem;
 }
-#user-email:focus{
+#user-email:focus {
   outline: none;
   border-color: var(--primary-color);
 }
-#join-btn{
-  border: 1px solid var(--primary-color);
-  padding: 0.5rem 2rem;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+#join-btn {
   cursor: pointer;
 }
-#join-btn:hover{
+#join-btn,
+#complete-msg {
+  border: 1px solid var(--primary-color);
+  padding: 0.5rem 1.75rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+#join-btn:hover {
   background-color: var(--secondary-color);
   color: var(--text-color);
+}
+#complete-msg-block {
+  display: none;
+  max-width: 400px;
+  margin: 1rem auto;
 }
