@@ -16,9 +16,11 @@ function displayCart() {
     var cart = JSON.parse(localStorage.getItem('shopping-cart'))
 
     // loop cart to get each cartItem info
-    cart.forEach(function (item) {
-      var cartItem = JSON.parse(item)
-      price = parseFloat(cartItem.price)
+    cart.forEach(function (cartItem) {
+      // get product from product-list file access by id
+      const product = productItemsById[cartItem.productId]
+
+      price = parseFloat(product.price)
       quantity = parseInt(cartItem.quantity)
       subTotal = price * quantity
 
@@ -27,12 +29,12 @@ function displayCart() {
         '<tr>' +
         "<td class='table-detail'>" +
         "<img class='product-image' src='/images/" +
-        cartItem.image +
+        product.image +
         "' />" +
         '</td>' +
         "<td class='table-detail'>" +
         "<span class='product-name'>" +
-        cartItem.name +
+        product.name +
         '</span>' +
         '</td>' +
         "<td class='table-detail'>" +
@@ -66,7 +68,6 @@ function displayCart() {
   orderTableBody.insertAdjacentHTML('beforeend', cartItemHTML)
   // add summary to html
   orderTableBody.insertAdjacentHTML('beforeend', summaryHTML)
-
 }
 
 // remove all cartItem
@@ -76,6 +77,17 @@ function clearCart() {
     // remove local storage
     localStorage.removeItem('shopping-cart')
   }
+}
+
+// handle check out button
+const checkoutBtn = document.getElementById('formSubmit-btn')
+checkoutBtn.addEventListener('click', submitForm)
+
+function submitForm(event) {
+  // clear cart in local storage
+  clearCart()
+  // refresh page
+  location.reload()
 }
 
 // remove cartItem by index

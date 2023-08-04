@@ -1,30 +1,3 @@
-const productList = [
-  {
-    id: '1',
-    name: 'Signature Blends',
-    price: 20,
-    image: 'coffee-signature.png',
-  },
-  {
-    id: '2',
-    name: 'Ethiopian Blends',
-    price: 18,
-    image: 'coffee-ethiopia.png',
-  },
-  {
-    id: '3',
-    name: 'Colombian Blends',
-    price: 18,
-    image: 'coffee-colombia.png',
-  },
-  {
-    id: '4',
-    name: 'Kenya Blends',
-    price: 18,
-    image: 'coffee-kenya.png',
-  },
-]
-
 // ------ handle add to cart button -----
 const addToCartBtn = document.querySelectorAll('.add-to-cart-btn')
 // by eventlistner to all Add to cart button
@@ -38,12 +11,8 @@ function addToCart(event) {
   const productId = event.target.dataset.productId
   // get product item info
   var cartItem = {
-    id: productId,
-    name: productList[productId - 1].name,
-    price: productList[productId - 1].price,
-    totalPrice: productList[productId - 1].price * inputQuantity,
+    productId,
     quantity: inputQuantity,
-    image: productList[productId - 1].image,
   }
   // add new item to shopping cart and save to local storage
   saveCartInLocalstorage(cartItem)
@@ -72,8 +41,7 @@ function saveCartInLocalstorage(cartItem) {
     cart = JSON.parse(localStorage.getItem('shopping-cart'))
   }
   // add new cartItem to cart object
-  // use JSON.stringify() method to convert a JavaScript object to a JSON string
-  cart.push(JSON.stringify(cartItem))
+  cart.push(cartItem)
 
   // save cart to local storage
   // use setItem() method to store values in localStorage.
