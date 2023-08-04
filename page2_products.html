@@ -73,17 +73,18 @@
           </div>
           <div class="input-wrapper">
             <input
-              class="product-quality"
+              class="product-quantity"
               type="number"
               id="quantitySig"
-              name="quantitySignature"
+              name="productQuantity"
               min="1"
               value="1"
               pattern="[0-9]*"
               required
             />
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="buy-now-btn">Buy now</button>
+            <button class="add-to-cart-btn" data-product-id="1">Add to cart</button>
+            <!-- data-* attribute is used to store custom data private to the page or application. -->
+            <button class="buy-now-btn" data-product-id="1">Buy now</button>
           </div>
         </div>
       </div>
@@ -116,17 +117,17 @@
           </div>
           <div class="input-wrapper">
             <input
-              class="product-quality"
+              class="product-quantity"
               type="number"
               id="quantityEthi"
-              name="quantityEthiopia"
+              name="productQuantity"
               min="1"
               value="1"
               pattern="[0-9]*"
               required
             />
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="buy-now-btn">Buy now</button>
+            <button class="add-to-cart-btn" data-product-id="2">Add to cart</button>
+            <button class="buy-now-btn" data-product-id="2">Buy now</button>
           </div>
         </div>
       </div>
@@ -159,17 +160,17 @@
           </div>
           <div class="input-wrapper">
             <input
-              class="product-quality"
+              class="product-quantity"
               type="number"
               id="quantityColom"
-              name="quantityColombia"
+              name="productQuantity"
               min="1"
               value="1"
               pattern="[0-9]*"
               required
             />
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="buy-now-btn">Buy now</button>
+            <button class="add-to-cart-btn" data-product-id="3">Add to cart</button>
+            <button class="buy-now-btn" data-product-id="3">Buy now</button>
           </div>
         </div>
       </div>
@@ -204,17 +205,17 @@
           </div>
           <div class="input-wrapper">
             <input
-              class="product-quality"
+              class="product-quantity"
               type="number"
               id="quantityKenya"
-              name="quantityKenya"
+              name="productQuantity"
               min="1"
               value="1"
               pattern="[0-9]*"
               required
             />
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="buy-now-btn">Buy now</button>
+            <button class="add-to-cart-btn" data-product-id="4">Add to cart</button>
+            <button class="buy-now-btn" data-product-id="4">Buy now</button>
           </div>
         </div>
       </div>
@@ -247,4 +248,5 @@
   </body>
   <!-- solve: external javascript file cannot get html element -->
   <script src="/script/email-subscription.js"></script>
+  <script src="/script/product-action.js"></script>
 </html>
