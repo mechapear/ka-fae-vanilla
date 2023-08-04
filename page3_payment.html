@@ -46,7 +46,7 @@
     </section>
 
     <!-- summary shopping cart -->
-    <div class="table-wrapper">
+    <div class="table-wrapper" id="shipping-cart">
       <p id="cart-header">Your cart</p>
       <table id="order-summary">
         <colgroup>
@@ -62,8 +62,8 @@
             <th class="table-header">Total</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
+        <tbody id="order-table-body">
+          <!-- <tr>
             <td class="table-detail">
               <img class="product-image" src="/images/product-bg.png" alt="" />
             </td>
@@ -72,7 +72,7 @@
             </td>
             <td class="table-detail">
               <input
-                class="product-quality"
+                class="product-quantity"
                 type="number"
                 id="quantitySig"
                 name="quantitySignature"
@@ -85,14 +85,14 @@
             <td class="product-price table-detail">price</td>
           </tr>
           <tr>
-            <td class="table-detail" colspan="3">Subtotal</td>
+            <td class="table-detail" colspan="3">Total price</td>
             <td class="table-detail">price</td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>
 
-    <form class="input-form" action="" method="post">
+    <form class="input-form">
       <!-- shipping form section -->
       <fieldset id="shipping-form">
         <legend class="form-legend">Shipping Address</legend>
@@ -221,7 +221,7 @@
             type="text"
             id="expiration-input"
             name="expirationDate"
-            maxlength="5"
+            pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})$"
             placeholder="MM/YY"
             required
           />
@@ -242,7 +242,9 @@
       </fieldset>
 
       <!-- form submit button -->
-      <button type="submit" id="formSubmit-btn">Check Out</button>
+      <button type="submit" id="formSubmit-btn" onclick="submitForm(event)">
+        Check Out
+      </button>
     </form>
 
     <!-- footer / subscription section -->
@@ -270,7 +272,10 @@
       </p>
     </footer>
   </body>
+  </script> -->
   <!-- solve: external javascript file cannot get html element -->
   <script src="/script/email-subscription.js"></script>
   <script src="/script/form-validation.js"></script>
+  <script src="/script/check-out.js"></script>
+  <script src="/script/shopping-cart.js"></script>
 </html>
