@@ -1,35 +1,3 @@
-// ------ handle add to cart button -----
-const addToCartBtn = document.querySelectorAll('.add-to-cart-btn')
-// by eventlistner to all Add to cart button
-addToCartBtn.forEach(el => el.addEventListener('click', addToCart))
-
-function addToCart(event) {
-  //get productQuantity element & value
-  const input = event.target.parentElement.children.productQuantity
-  const inputQuantity = input.value
-  // get product id
-  const productId = event.target.dataset.productId
-  // get product item info
-  var cartItem = {
-    productId,
-    quantity: inputQuantity,
-  }
-  // add new item to shopping cart and save to local storage
-  saveCartInLocalstorage(cartItem)
-}
-
-// ----- handle buy now button -----
-const buyNowBtn = document.querySelectorAll('.buy-now-btn')
-// by eventlistner to all Add to cart button
-buyNowBtn.forEach(el => el.addEventListener('click', buyNow))
-
-function buyNow(event) {
-  // add product in shopping cart
-  addToCart(event)
-  // go to payment page
-  window.location.href = '/page3_payment.html'
-}
-
 // save shopping cart in local storage
 function saveCartInLocalstorage(cartItem) {
   // array of shopping cart
@@ -47,3 +15,41 @@ function saveCartInLocalstorage(cartItem) {
   // use setItem() method to store values in localStorage.
   localStorage.setItem('shopping-cart', JSON.stringify(cart))
 }
+
+function addToCart(event) {
+  //get productQuantity element & value
+  const input = event.target.parentElement.children.productQuantity
+  const inputQuantity = input.value
+  // get product id
+  const productId = event.target.dataset.productId
+  // get product item info
+  var cartItem = {
+    productId,
+    quantity: inputQuantity,
+  }
+  // add new item to shopping cart and save to local storage
+  saveCartInLocalstorage(cartItem)
+}
+
+// ------ handle add to cart button -----
+function handleClickAddToCart(event) {
+  addToCart(event)
+  // alert add to cart successfully
+  alert('Successfully added!')
+}
+
+const addToCartBtn = document.querySelectorAll('.add-to-cart-btn')
+// by eventlistner to all Add to cart button
+addToCartBtn.forEach(el => el.addEventListener('click', handleClickAddToCart))
+
+// ----- handle buy now button -----
+function handleClickBuyNow(event) {
+  // add product in shopping cart
+  addToCart(event)
+  // go to payment page
+  window.location.href = '/page3_payment.html'
+}
+
+const buyNowBtn = document.querySelectorAll('.buy-now-btn')
+// by eventlistner to all Add to cart button
+buyNowBtn.forEach(el => el.addEventListener('click', handleClickBuyNow))

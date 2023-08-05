@@ -1,28 +1,54 @@
 // when loading this page
 displayCart()
 
-// display shopping cart on payment page
-function displayCart() {
-  let cartItemHTML = ''
-  let summaryHTML = ''
-  let price = 0
-  let quantity = 0
-  let subTotal = 0
-  let totalPrice = 0
+// remove cartItem by index
+function removeCartItem(event) {
+  // get product id
+  const productId = event.target.dataset.productId
 
   if (localStorage.getItem('shopping-cart')) {
     // read cart from localStorage
     // then use JSON.parse() method to convert a JSON string into a JavaScript object
-    var cart = JSON.parse(localStorage.getItem('shopping-cart'))
+    const cart = JSON.parse(localStorage.getItem('shopping-cart'))
+
+    // remove cartItem from cart
+    const updatedCart = cart.filter(
+      cartItem => cartItem.productId !== productId
+    )
+    // save cart to local storage
+    // use setItem() method to store values in localStorage.
+    localStorage.setItem('shopping-cart', JSON.stringify(updatedCart))
+  }
+  // display an update shopping cart
+  displayCart()
+}
+
+// display shopping cart on payment page
+function displayCart() {
+  // get table body for adding cartItem and summary html
+  const orderTableBody = document.getElementById('order-table-body')
+
+  // clear shopping cart
+  orderTableBody.innerHTML = ''
+
+  let cartItemHTML = ''
+  let totalPrice = 0
+  const stringCartData = localStorage.getItem('shopping-cart')
+
+  if (stringCartData && stringCartData !== '[]') {
+    // read cart from localStorage
+    // then use JSON.parse() method to convert a JSON string into a JavaScript object
+    const cart = JSON.parse(stringCartData)
 
     // loop cart to get each cartItem info
     cart.forEach(function (cartItem) {
       // get product from product-list file access by id
       const product = productItemsById[cartItem.productId]
 
-      price = parseFloat(product.price)
-      quantity = parseInt(cartItem.quantity)
-      subTotal = price * quantity
+      const price = parseFloat(product.price)
+      const quantity = parseInt(cartItem.quantity)
+      const subTotal = price * quantity
+      totalPrice += subTotal
 
       // create string of cartItem html
       cartItemHTML += `
@@ -32,7 +58,7 @@ function displayCart() {
             </td>
             <td class="table-detail">
               <span class="product-name">${product.name}</span>
-              <button class="remove-btn">remove</button>
+              <button class="remove-btn" data-product-id="${product.id}">remove</button>
             </td>
             <td class="table-detail">
               <span class="product-quantity">${quantity}</span>
@@ -40,17 +66,26 @@ function displayCart() {
             <td class="product-price table-detail">$${subTotal}</td>
           </tr>
         `
-
-      totalPrice += subTotal
     })
+  } else {
+    cartItemHTML = `
+    <tr >
+      <td class="table-detail cart-empty" colspan="4">
+        Shopping cart is empty. <a class="cart-empty-link" href="page2_products.html">Continue shopping</a>
+      </td>
+    </tr>
+    `
   }
 
-  // get table body for adding cartItem and summary html
-  const orderTableBody = document.getElementById('order-table-body')
   // add cartItem to html
   orderTableBody.insertAdjacentHTML('beforeend', cartItemHTML)
   // update total price in html
   document.getElementById('totalPrice').innerHTML = totalPrice
+
+  // ----- handle remove button -----
+  const removeBtn = document.querySelectorAll('.remove-btn')
+  // by eventlistner to all remove buttons
+  removeBtn.forEach(el => el.addEventListener('click', removeCartItem))
 }
 
 // remove all cartItem
