@@ -1,15 +1,28 @@
 // save shopping cart in local storage
-function saveCartInLocalstorage(cartItem) {
+function saveCartInLocalstorage(newCartItem) {
   // array of shopping cart
-  var cart = []
+  let cart = []
+  const stringCartData = localStorage.getItem('shopping-cart')
   // If shopping cart in local storage is not empty
-  if (localStorage.getItem('shopping-cart')) {
+  if (stringCartData) {
     // read cart from localStorage
     // then use JSON.parse() method to convert a JSON string into a JavaScript object
-    cart = JSON.parse(localStorage.getItem('shopping-cart'))
+    cart = JSON.parse(stringCartData)
   }
-  // add new cartItem to cart object
-  cart.push(cartItem)
+  // check cartItem, if cartItam already exists, update the quantity of the existing cartItem
+  let isCartItemAlreadyExist = false
+  for (const cartItem of cart) {
+    if (cartItem.productId === newCartItem.productId) {
+      cartItem.quantity += newCartItem.quantity
+      isCartItemAlreadyExist = true
+      break
+    }
+  }
+
+  // if cartItam doesn't already exist, add new cartItem to cart object
+  if (!isCartItemAlreadyExist) {
+    cart.push(newCartItem)
+  }
 
   // save cart to local storage
   // use setItem() method to store values in localStorage.
@@ -19,7 +32,7 @@ function saveCartInLocalstorage(cartItem) {
 function addToCart(event) {
   //get productQuantity element & value
   const input = event.target.parentElement.children.productQuantity
-  const inputQuantity = input.value
+  const inputQuantity = parseInt(input.value)
   // get product id
   const productId = event.target.dataset.productId
   // get product item info
@@ -29,6 +42,8 @@ function addToCart(event) {
   }
   // add new item to shopping cart and save to local storage
   saveCartInLocalstorage(cartItem)
+  // reset productQuantity input to be 1
+  input.value = 1
 }
 
 // ------ handle add to cart button -----
