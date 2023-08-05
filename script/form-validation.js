@@ -21,6 +21,16 @@ const addressInput = document.getElementById('address-input')
 addressInput.addEventListener('invalid', checkAddress)
 addressInput.addEventListener('input', resetMsg)
 
+// check state input
+function checkAddress(event) {
+  if (event.target.validity.valueMissing) {
+    event.target.setCustomValidity('Please choose your state')
+  }
+}
+const stateInput = document.getElementById('state-input')
+stateInput.addEventListener('invalid', checkAddress)
+stateInput.addEventListener('input', resetMsg)
+
 // check postal code input
 function checkPostal(event) {
   if (event.target.validity.valueMissing) {
@@ -80,3 +90,6 @@ function checkCVV(event) {
 const cvvInput = document.getElementById('cvv-input')
 cvvInput.addEventListener('invalid', checkCVV)
 cvvInput.addEventListener('input', resetMsg)
+
+
+

@@ -97,13 +97,21 @@ function clearCart() {
   }
 }
 
-// ----- handle check out button -----
-const checkoutBtn = document.getElementById('formSubmit-btn')
-checkoutBtn.addEventListener('click', submitForm)
+// ----- handle form submit-----
+function handleSubmitForm(event) {
+  // prevent default refresh the page
+  event.preventDefault()
 
-function submitForm(event) {
   // clear cart in local storage
   clearCart()
-  // refresh page
-  location.reload()
+
+  // alert check out successfully
+  alert('We have received your order. Thank you for purchasing :)')
+
+  // reset all  input to be blank
+  event.target.reset()
 }
+
+// check form validation
+const form = document.getElementById('check-out-form')
+form.addEventListener('submit', handleSubmitForm)

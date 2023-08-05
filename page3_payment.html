@@ -72,7 +72,7 @@
       </table>
     </div>
 
-    <form class="input-form">
+    <form class="input-form" id="check-out-form">
       <!-- shipping form section -->
       <fieldset id="shipping-form">
         <legend class="form-legend">Shipping Address</legend>
@@ -111,7 +111,14 @@
         </div>
         <div class="input-field">
           <label class="label-item" for="state-input">State</label>
-          <input class="input-item" type="text" id="state-input" name="state" list="stateList" required/>
+          <input
+            class="input-item"
+            type="text"
+            id="state-input"
+            name="state"
+            list="stateList"
+            required
+          />
           <datalist id="stateList">
             <option value="Alberta"></option>
             <option value="British Colombia"></option>
@@ -166,11 +173,7 @@
           />
         </div>
         <div class="gift-field">
-          <input
-            id="gift-input"
-            type="checkbox"
-            name="gift"
-          />
+          <input id="gift-input" type="checkbox" name="gift" />
           <label class="gift-label" for="gift-input">Purchase as a gift</label>
         </div>
       </fieldset>
@@ -227,9 +230,7 @@
       </fieldset>
 
       <!-- form submit button -->
-      <button type="submit" id="formSubmit-btn" onclick="submitForm(event)">
-        Check Out
-      </button>
+      <button type="submit" id="formSubmit-btn">Check Out</button>
     </form>
 
     <!-- footer / subscription section -->
