@@ -5,9 +5,10 @@
   display: inline-block;
 }
 #logo {
-  width: 100px;
+  width: 250px;
   height: 100px;
   vertical-align: top;
+  margin-top: 0.5rem;
 }
 #header-menu {
   background-color: white;
