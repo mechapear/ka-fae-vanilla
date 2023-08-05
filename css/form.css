@@ -36,9 +36,21 @@
 .input-item:focus {
   border-color: var(--primary-color);
 }
-#country-input:focus{
+.input-item:disabled{
+  color: #afafaf;
+  background-color: var(--secondary-color);
   border-color: var(--secondary-color);
+  cursor: not-allowed;
 }
+.gift-field{
+  padding-left: 7rem;
+  margin: 1rem 0;
+}
+#gift-input{
+  margin-left: 0;
+}
+
+
 /* rscss */
 .input-item.-size-s {
   max-width: 88px;
