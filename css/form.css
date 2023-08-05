@@ -16,13 +16,14 @@
 }
 .input-field {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   margin: 1rem 0;
 }
 .label-item {
   width: 100px;
   text-align: right;
+  padding: 0.5rem 0;
 }
 .input-item {
   flex: 1;
