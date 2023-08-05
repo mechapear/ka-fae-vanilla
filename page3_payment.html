@@ -63,32 +63,28 @@
           </tr>
         </thead>
         <tbody id="order-table-body">
-          <!-- <tr>
+          <!-- 
+          <tr>
             <td class="table-detail">
               <img class="product-image" src="/images/product-bg.png" alt="" />
             </td>
             <td class="table-detail">
               <span class="product-name">name</span>
+              <button class="remove-btn">remove</button>
             </td>
             <td class="table-detail">
-              <input
-                class="product-quantity"
-                type="number"
-                id="quantitySig"
-                name="quantitySignature"
-                min="0"
-                value="1"
-                pattern="[0-9]*"
-                required
-              />
+              <span class="product-quantity">quantity</span>
             </td>
             <td class="product-price table-detail">price</td>
           </tr>
+           -->
+        </tbody>
+        <tfoot>
           <tr>
             <td class="table-detail" colspan="3">Total price</td>
-            <td class="table-detail">price</td>
-          </tr> -->
-        </tbody>
+            <td class="table-detail">$<span id="totalPrice">0</span></td>
+          </tr>
+        </tfoot>
       </table>
     </div>
 
@@ -272,10 +268,9 @@
       </p>
     </footer>
   </body>
-  </script> -->
   <!-- solve: external javascript file cannot get html element -->
   <script src="/script/email-subscription.js"></script>
   <script src="/script/form-validation.js"></script>
-  <script src="/script/check-out.js"></script>
+  <script src="/script/product-list.js"></script>
   <script src="/script/shopping-cart.js"></script>
 </html>

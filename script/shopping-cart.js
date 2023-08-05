@@ -25,40 +25,23 @@ function displayCart() {
       subTotal = price * quantity
 
       // create string of cartItem html
-      cartItemHTML +=
-        '<tr>' +
-        "<td class='table-detail'>" +
-        "<img class='product-image' src='/images/" +
-        product.image +
-        "' />" +
-        '</td>' +
-        "<td class='table-detail'>" +
-        "<span class='product-name'>" +
-        product.name +
-        '</span>' +
-        '</td>' +
-        "<td class='table-detail'>" +
-        "<input class='product-quantity' type='number' id='quantitySig' name='quantitySignature' min='0' pattern='[0-9]*' required " +
-        "value='" +
-        quantity +
-        "'" +
-        '/>' +
-        '</td>' +
-        "<td class='product-price table-detail'>$" +
-        subTotal +
-        '</td>' +
-        '</tr>'
+      cartItemHTML += `
+        <tr>
+            <td class="table-detail">
+              <img class="product-image" src="/images/${product.image}" alt="" />
+            </td>
+            <td class="table-detail">
+              <span class="product-name">${product.name}</span>
+              <button class="remove-btn">remove</button>
+            </td>
+            <td class="table-detail">
+              <span class="product-quantity">${quantity}</span>
+            </td>
+            <td class="product-price table-detail">$${subTotal}</td>
+          </tr>
+        `
 
       totalPrice += subTotal
-
-      // create string of summary html
-      summaryHTML =
-        '<tr>' +
-        "<td class='table-detail' colspan='3'>Total price</td>" +
-        "<td class='table-detail'>$" +
-        totalPrice +
-        '</td>' +
-        '</tr>'
     })
   }
 
@@ -66,8 +49,8 @@ function displayCart() {
   const orderTableBody = document.getElementById('order-table-body')
   // add cartItem to html
   orderTableBody.insertAdjacentHTML('beforeend', cartItemHTML)
-  // add summary to html
-  orderTableBody.insertAdjacentHTML('beforeend', summaryHTML)
+  // update total price in html
+  document.getElementById('totalPrice').innerHTML = totalPrice
 }
 
 // remove all cartItem
@@ -79,7 +62,7 @@ function clearCart() {
   }
 }
 
-// handle check out button
+// ----- handle check out button -----
 const checkoutBtn = document.getElementById('formSubmit-btn')
 checkoutBtn.addEventListener('click', submitForm)
 
@@ -88,14 +71,4 @@ function submitForm(event) {
   clearCart()
   // refresh page
   location.reload()
-}
-
-// remove cartItem by index
-function removeCartItem(index) {
-  if (localStorage.getItem('shopping-cart')) {
-    var cart = JSON.parse(localStorage.getItem('shopping-cart'))
-    localStorage.removeItem(cart[index])
-    // display an update shopping cart
-    displayCart()
-  }
 }

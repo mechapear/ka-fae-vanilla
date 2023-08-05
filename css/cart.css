@@ -35,14 +35,21 @@
   height: 5rem;
   border-radius: 0.5rem;
 }
-.product-quantity {
+.remove-btn {
+  display: block;
+  font-size: 12px;
   border-radius: 50px;
-  padding: 0.5rem 1rem;
-  max-width: 4.5rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0.5rem 0;
   border: 1px solid var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--primary-color);
   outline: none;
+  cursor: pointer;
+}
+.remove-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 @media only screen and (min-width: 768px) {
   .product-image {
