@@ -108,7 +108,7 @@ function handleSubmitForm(event) {
   // alert check out successfully
   alert('We have received your order. Thank you for purchasing :)')
 
-  // reset all  input to be blank
+  // reset all input to be blank
   event.target.reset()
 
   // display an update shopping cart after submit form

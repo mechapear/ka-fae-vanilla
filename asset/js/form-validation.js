@@ -90,6 +90,3 @@ function checkCVV(event) {
 const cvvInput = document.getElementById('cvv-input')
 cvvInput.addEventListener('invalid', checkCVV)
 cvvInput.addEventListener('input', resetMsg)
-
-
-

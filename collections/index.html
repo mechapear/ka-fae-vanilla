@@ -232,18 +232,18 @@
     <!-- footer / subscription section -->
     <footer id="footer-wrapper">
       <p class="footer-header">Subscribe here and don't miss a thing!</p>
-      <div id="subscribeInput">
-        <input
-          type="email"
-          id="user-email"
-          name="userEmail"
-          placeholder="email@example.com"
-          required
-        />
-        <button id="join-btn" type="submit" onclick="subscribeComplete()">
-          join
-        </button>
-      </div>
+      <form id="email-subscription">
+        <div id="subscribeInput">
+          <input
+            type="email"
+            id="user-email"
+            name="userEmail"
+            placeholder="email@example.com"
+            required
+          />
+          <button id="join-btn" type="submit">join</button>
+        </div>
+      </form>
       <!-- this message will display when user submit the email subscription -->
       <div id="complete-msg-block">
         <p id="complete-msg">Thank you for joining our community!</p>
