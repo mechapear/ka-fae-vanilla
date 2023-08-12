@@ -54,7 +54,7 @@ function displayCart() {
       cartItemHTML += `
         <tr>
             <td class="table-detail">
-              <img class="product-image" src="/images/${product.image}" alt="" />
+              <img class="product-image" src="/asset/images/${product.image}" alt="" />
             </td>
             <td class="table-detail">
               <span class="product-name">${product.name}</span>
@@ -71,7 +71,7 @@ function displayCart() {
     cartItemHTML = `
     <tr >
       <td class="table-detail cart-empty" colspan="4">
-        Shopping cart is empty. <a class="cart-empty-link" href="page2_products.html">Continue shopping</a>
+        Shopping cart is empty. <a class="cart-empty-link" href="/collections/index.html">Continue shopping</a>
       </td>
     </tr>
     `
@@ -110,6 +110,9 @@ function handleSubmitForm(event) {
 
   // reset all  input to be blank
   event.target.reset()
+
+  // display an update shopping cart after submit form
+  displayCart()
 }
 
 // check form validation
