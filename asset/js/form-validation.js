@@ -22,13 +22,13 @@ addressInput.addEventListener('invalid', checkAddress)
 addressInput.addEventListener('input', resetMsg)
 
 // check state input
-function checkAddress(event) {
+function checkState(event) {
   if (event.target.validity.valueMissing) {
     event.target.setCustomValidity('Please choose your state')
   }
 }
 const stateInput = document.getElementById('state-input')
-stateInput.addEventListener('invalid', checkAddress)
+stateInput.addEventListener('invalid', checkState)
 stateInput.addEventListener('input', resetMsg)
 
 // check postal code input
