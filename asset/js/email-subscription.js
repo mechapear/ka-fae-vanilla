@@ -11,9 +11,9 @@ function checkEmail(event) {
   }
 }
 
-const emailInput = document.getElementById('user-email')
-emailInput.addEventListener('invalid', checkEmail)
-emailInput.addEventListener('input', resetMsg)
+const userEmail = document.getElementById('user-email')
+userEmail.addEventListener('invalid', checkEmail)
+userEmail.addEventListener('input', resetMsg)
 
 // ----- handle form submit-----
 function subscribeComplete(event) {
@@ -28,8 +28,8 @@ function subscribeComplete(event) {
   subscribeInput.style.display = 'none'
 
   // for testing that we can get user input
-  console.log(emailInput.value)
+  console.log(userEmail.value)
 }
 
-const subscribeBtn = document.getElementById('email-subscription')
-subscribeBtn.addEventListener('submit', subscribeComplete)
+const emailSubscribeForm = document.getElementById('email-subscription')
+emailSubscribeForm.addEventListener('submit', subscribeComplete)
