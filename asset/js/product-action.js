@@ -62,7 +62,7 @@ function handleClickBuyNow(event) {
   // add product in shopping cart
   addToCart(event)
   // go to payment page
-  window.location.href = '/checkouts/index.html'
+  window.location.href = '/checkouts/'
 }
 
 const buyNowBtn = document.querySelectorAll('.buy-now-btn')

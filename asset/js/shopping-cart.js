@@ -71,7 +71,7 @@ function displayCart() {
     cartItemHTML = `
     <tr >
       <td class="table-detail cart-empty" colspan="4">
-        Shopping cart is empty. <a class="cart-empty-link" href="/collections/index.html">Continue shopping</a>
+        Shopping cart is empty. <a class="cart-empty-link" href="/collections/">Continue shopping</a>
       </td>
     </tr>
     `
