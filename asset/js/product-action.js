@@ -62,7 +62,7 @@ function handleClickBuyNow(event) {
   // add product in shopping cart
   addToCart(event)
   // go to payment page
-  window.location.href = '/checkouts/'
+  window.location.href = '/ka-fae-vanilla/checkouts/'
 }
 
 const buyNowBtn = document.querySelectorAll('.buy-now-btn')
