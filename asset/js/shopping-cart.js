@@ -54,7 +54,7 @@ function displayCart() {
       cartItemHTML += `
         <tr>
             <td class="table-detail">
-              <img class="product-image" src="/asset/images/${product.image}" alt="" />
+              <img class="product-image" src="/ka-fae-vanilla/asset/images/${product.image}" alt="" />
             </td>
             <td class="table-detail">
               <span class="product-name">${product.name}</span>
@@ -71,7 +71,7 @@ function displayCart() {
     cartItemHTML = `
     <tr >
       <td class="table-detail cart-empty" colspan="4">
-        Shopping cart is empty. <a class="cart-empty-link" href="/collections/">Continue shopping</a>
+        Shopping cart is empty. <a class="cart-empty-link" href="/ka-fae-vanilla/collections/">Continue shopping</a>
       </td>
     </tr>
     `
