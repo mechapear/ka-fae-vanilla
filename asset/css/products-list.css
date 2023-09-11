@@ -8,9 +8,13 @@
   padding: 1.5rem 0;
 }
 .product-image {
-  width: 320px;
-  height: 320px;
+  max-width: min(100%, 20rem); /* avoid image to be bigger than parent */
+  width: auto;
+  height: auto;
   border-radius: 0.5rem;
+  object-fit: cover;
+  display: block; /* make image full width */
+  aspect-ratio: 1 / 1;
 }
 .product-info {
   padding: 1.5rem 0;
@@ -40,7 +44,7 @@
   padding: 0.75rem 1rem;
 }
 .product-quantity {
-  max-width: 5rem;
+  max-width: 4rem;
   border: 1px solid var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--primary-color);
@@ -62,11 +66,13 @@
 @media only screen and (min-width: 768px) {
   .product-item {
     display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 4rem;
     padding: 2rem 0;
   }
   .product-image {
-    align-items: center;
+    flex-shrink: 0; /* avoid image to be shirnk */
   }
   .product-info {
     padding: 0;
